@@ -1,16 +1,15 @@
-
 import './App.css';
-import Nav from './Nav';
-import Nemesis from './Nemesis';
-import Container from './Container';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './Layout';
+import Modal from './Modal';
 function App() {
   return (
-    <div>
-   <Nav/>
-   <Nemesis/>
-   <Container/>
-    </div>
-// stack it
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />} />
+      <Route path="/shop" element={<Modal />} />
+    </Routes>
+  </BrowserRouter>
   );
 }
 
