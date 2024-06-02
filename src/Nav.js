@@ -11,8 +11,8 @@ const Nav = ()=>{
         </div>
         <div id="nav-part2">
           <div id="links">
-            <a href="#" >Shop</a>
-            <a href="#" >Events</a>
+            <a href="#" >Movies</a>
+            <a href="#" >Dresses</a>
             <a href="#">Games</a>
             <a href="#" >Donate</a>
           </div>

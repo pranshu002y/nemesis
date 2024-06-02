@@ -1,0 +1,68 @@
+#page1 {
+    min-height: 500px;
+    position: relative;
+    width: 100%;
+    /* border: 2px solid red; */
+    padding: 0 1vw;
+    padding-top: 20vh;
+  }
+  
+  #page1 .nemesis {
+    font-size: 15.8vw;
+    text-transform: uppercase;
+    font-family: 'futura';
+    line-height: 14vw;
+    letter-spacing: -8px;
+    padding-bottom: 50px;
+  }
+  
+
+.nemesis {
+    display: inline-block;
+    position: relative;
+    animation: moveUp 1s forwards;
+    opacity: 0;
+    transform: translateY(100%);
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nemesis:nth-child(1) {
+    animation-delay: 0.1s;
+ 
+}
+
+.nemesis:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.nemesis:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.nemesis:nth-child(4) {
+    animation-delay: 0.7s;
+}
+
+.nemesis:nth-child(5) {
+    animation-delay: 0.9s;
+   
+}
+
+.nemesis:nth-child(6) {
+    animation-delay: 1.1s;
+}
+
+.nemesis:nth-child(7) {
+    animation-delay: 1.3s;
+}
