@@ -21,6 +21,7 @@
 }
  section .container .card:nth-child(1) .box .icon .iconBox {
 	 background: #d3b19a;
+	 
 }
  section .container .card:nth-child(2) .box .icon .iconBox {
 	 background: #70b3b1;
