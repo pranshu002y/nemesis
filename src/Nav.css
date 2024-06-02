@@ -58,6 +58,7 @@
   height: 50px;
   padding: 10px;
 animation: rotate 3s infinite;
+object-fit: contain;
 }
 @keyframes rotate {
   0% {
@@ -122,6 +123,8 @@ animation: rotate 3s infinite;
 
   .logo-icon img {
     height: 40px;
+    width: 100%;
+    object-fit: contain;
   }
 }
 
