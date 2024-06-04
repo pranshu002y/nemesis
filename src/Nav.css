@@ -12,7 +12,8 @@
 
 #nav {
   width: 100%;
-  position: fixed; /* Uncomment this line */
+  /* position: fixed;  */
+  /* Uncomment this line */
  
   text-transform: uppercase;
   display: flex;

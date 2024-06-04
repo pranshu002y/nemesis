@@ -1,26 +1,131 @@
-import React from "react";
-
-
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Modal = ({ setShowModal }) => {
+  const [data, setData] = useState({
+    Title: "",
+    Link:"",
+    Category: "",
+    Image: ""
+  });
+
+  const [imageUrl, setImageUrl] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); 
+
+  
+  const handleImageupload = async (event) => {
+    try {
+      const files = event.target.files;
+      if (!files || files.length === 0) {
+        throw new Error("No file selected");
+      }
+
+      setLoading(true);
+
+      const formData = new FormData();
+      for (let i = 0; i < files.length; i++) {
+        formData.append("file", files[i]);
+      }
+
+      formData.append("upload_preset", "ml_default");
+      const response = await fetch(
+        "https://api.cloudinary.com/v1_1/dzvxsgooe/image/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+      if (!response.ok) {
+        throw new Error(`Upload failed with status ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      setImageUrl((prevImage) => [...prevImage, data.secure_url]);
+      console.log(data.secure_url);
+
+      setLoading(false);
+    } catch (error) {
+      console.error(error.message);
+      setLoading(false);
+    }
+  };
+  const handleSave = async (e) => {
+    e.preventDefault();
+
+    if (imageUrl.length === 0) {
+      console.error("No image to save");
+      return;
+    }
+
+    try {
+      const def = {
+        Image: imageUrl[0],
+        company: data.company,
+        Title: data.Title,
+        Category: data.Category,
+        Link: data.Link,
+      };
+
+      const response = await axios.post("http://localhost:5200/auth/movies", def);
+      console.log("Save operation complete", response.data);
+      navigate("/"); 
+    } catch (err) {
+      console.error(err, "Save operation failed");
+    }
+  };
+
+
   return (
     <div className="si">
       <div className="notification">
         <main>
           <div className="card-2">
-            <img src="https://images.unsplash.com/photo-1661435804987-a8aff5752018?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+            <img
+              src="https://images.unsplash.com/photo-1661435804987-a8aff5752018?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
             <div className="card-content">
-              <h2>Netflix</h2>
-              <p>Gore.crime</p>
-              <a href="#" className="button">
-                <span className="material-symbols-outlined">
-                 sex
-                </span>
-              </a>
+              <span>
+                <input
+                  type="text"
+                  placeholder="Enter the title"
+                  value={data.Title}
+                  onChange={(e) => setData({ ...data, Title: e.target.value })}
+                />
+                 <input
+                  type="text"
+                  placeholder="Enter the Category"
+                  value={data.Category}
+                  onChange={(e) => setData({ ...data, Category: e.target.value })}
+                />
+                 <input
+                  type="text"
+                  placeholder="Enter the Link"
+                  value={data.Link}
+                  onChange={(e) => setData({ ...data, Link: e.target.value })}
+                />
+                  </span>
+              <p>
+                <input
+                  type="file"
+                  placeholder="Enter your Image"
+                  name="image_url"
+                  onChange={handleImageupload}
+                  required
+                />
+              </p>
             </div>
           </div>
         </main>
-        <div className="view-all" onClick={() => setShowModal(false)}>
-          <div className="view-all-btn">LOG OUT</div>
+        <div className="view-all">
+          <div className="submit-btn" onClick={handleSave}>
+            SUBMIT
+          </div>
+          <div className="close-btn" onClick={() => setShowModal(false)}>
+            CLOSE
+          </div>
         </div>
       </div>
     </div>
