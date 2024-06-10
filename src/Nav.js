@@ -4,11 +4,13 @@ import { useState } from "react";
 import Modal from "./Modal";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import Profile from "./Profile";
 const Nav = ()=>{ 
  
   const { user,loginWithRedirect ,isAuthenticated ,logout } = useAuth0();
 
   console.log("logged User",user);
+  
   const navigate = useNavigate(); 
   const [showModal , setShowModal]=useState(false);
   const openModal =()=>{
@@ -19,20 +21,22 @@ const Nav = ()=>{
   };
     return(
 <div>
-{showModal && <Modal setShowModal={setShowModal}/>}
+{/* {showModal && <Modal setShowModal={setShowModal}/>} */}
+{showModal && <Profile setShowModal={setShowModal}/>}
       <div id="nav">
         <div id="nav-part1">
           <h1 onClick={()=>navigate("/")}>Nemesis</h1>
         </div>
         <div id="nav-part2">
           <div id="links">
-         {
-          isAuthenticated ? (<button onClick={() => logout()}>LogOut</button>) : ( <button onClick={() => loginWithRedirect()}>Log In</button>)
-         }
+         
             <a href="#" onClick={()=>navigate("/movies")}>Movies</a>
             <a href="#" onClick={()=>navigate("/dress")}>Dresses</a>
             <a href="#" onClick={()=>navigate("/games")}>Games</a>
             <a href="https://www.linkedin.com/in/pranshu002y/"  onClick={()=>navigate("/linkedin")}>Donate</a>
+            {
+          isAuthenticated ? (<a href="#" onClick={() => logout()}>LogOut</a>) : ( <a href="#" onClick={() => loginWithRedirect()}>Log In</a>)
+         }
           </div>
           <div className="logo-icon" >
             <img src = "https://cdn.icon-icons.com/icons2/1144/PNG/512/fourdots_80930.png" onClick={()=>{
