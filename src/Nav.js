@@ -33,7 +33,7 @@ const Nav = ()=>{
             <a href="#" onClick={()=>navigate("/movies")}>Movies</a>
             <a href="#" onClick={()=>navigate("/dress")}>Dresses</a>
             <a href="#" onClick={()=>navigate("/games")}>Games</a>
-            <a href="https://www.linkedin.com/in/pranshu002y/"  onClick={()=>navigate("/linkedin")}>Donate</a>
+            {/* <a href="https://www.linkedin.com/in/pranshu002y/"  onClick={()=>navigate("/linkedin")}>Donate</a> */}
             {
           isAuthenticated ? (<a href="#" onClick={() => logout()}>LogOut</a>) : ( <a href="#" onClick={() => loginWithRedirect()}>Log In</a>)
          }
