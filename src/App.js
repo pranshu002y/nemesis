@@ -2,10 +2,11 @@ import './App.css';
 import React from 'react';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from './Layout';
+import Layout from "./Layout";
 import Movies from "./Movies";
 import Dress from "./Dress";
 import Games from "./Games";
+import Login from './Login';
 function App() {
   return (
     <Auth0Provider
@@ -17,7 +18,8 @@ function App() {
   >
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Layout />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/layout" element={<Layout/>} />
       <Route path="/movies" element={<Movies/>} />
       <Route path="/dress" element={<Dress/>} />
       <Route path="/games" element={<Games />} />

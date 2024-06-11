@@ -7,9 +7,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Profile from "./Profile";
 const Nav = ()=>{ 
  
-  const { user,loginWithRedirect ,isAuthenticated ,logout } = useAuth0();
+  const {logout } = useAuth0();
 
-  console.log("logged User",user);
+ 
   
   const navigate = useNavigate(); 
   const [showModal , setShowModal]=useState(false);
@@ -34,9 +34,8 @@ const Nav = ()=>{
             <a href="#" onClick={()=>navigate("/dress")}>Dresses</a>
             <a href="#" onClick={()=>navigate("/games")}>Games</a>
             {/* <a href="https://www.linkedin.com/in/pranshu002y/"  onClick={()=>navigate("/linkedin")}>Donate</a> */}
-            {
-          isAuthenticated ? (<a href="#" onClick={() => logout()}>LogOut</a>) : ( <a href="#" onClick={() => loginWithRedirect()}>Log In</a>)
-         }
+       
+       <a href="#" onClick={() => logout()}>LogOut</a>
           </div>
           <div className="logo-icon" >
             <img src = "https://cdn.icon-icons.com/icons2/1144/PNG/512/fourdots_80930.png" onClick={()=>{
