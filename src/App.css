@@ -249,6 +249,7 @@ border-radius: 8px;
 }
 
 
+
 .Btn--large {
   width: 100% !important;
   padding: 12px 20px !important;
@@ -264,7 +265,7 @@ border-radius: 8px;
 }
 
 .login-left-container {
- background-image:url("");
+ background-image:url("https://res.cloudinary.com/dpiatasuq/image/upload/v1717596592/Screenshot_Capture_-_2024-06-05_-_19-38-59_oingdm.png");
   background-repeat: no-repeat;
  
   background-size: cover;
@@ -323,35 +324,8 @@ border-radius: 8px;
   display: flex;
 }
 
-.form_group {
-  width: 100%;
-  position: relative;
-  margin-bottom: 24px;
-}
 
-.form_group input {
-  position: relative;
-  padding: 12px;
-  width: 100%;
-  background: transparent;
-  height: 40px;
-  border: none;
-  font-weight: 400;
-  font-size: 16px; 
-  border: 1px solid grey;
-  border-radius: 8px;
-}
-.form_group input::after {
-  z-index: 9999;
-  content: attr(errmssg);
-  position: absolute;
-  left: 0;
-  top: 0px;
-  color: red;
-  width: 100px;
-  height: 100px;
-  background-color: #6842D4;
-}
+
 .form_group label {
   font-size: 14px;
   position: absolute;

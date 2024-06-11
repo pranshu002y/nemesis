@@ -19,14 +19,7 @@ const Login = () => {
       <div className="login-left-container"></div>
 
       <div className="loginContent">
-        <div className="login-logo">
-          <a href="/layout">
-            <img
-              src={"https://cdn.icon-icons.com/icons2/1144/PNG/512/fourdots_80930.png"}
-              alt="learn central"
-            />
-          </a>
-        </div>
+       
         <div className="login-new">
           <div className="login-heading">
             <h2 className="loginContent-heading">
