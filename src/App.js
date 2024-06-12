@@ -8,6 +8,8 @@ import Dress from "./Dress";
 import Games from "./Games";
 import Login from './Login';
 import Modal from './Modal';
+import Modaldress from './Modaldress';
+import Modalgame from './Modalgame';
 function App() {
   return (
     <Auth0Provider
@@ -23,6 +25,8 @@ function App() {
       <Route path="/layout" element={<Layout/>} />
       <Route path="/movies" element={<Movies/>} />
       <Route path="/movie/modal" element={<Modal/>} />
+      <Route path="/dress/modal" element={<Modaldress/>} />
+      <Route path="/game/modal" element={<Modalgame/>} />
       <Route path="/dress" element={<Dress/>} />
       <Route path="/games" element={<Games />} />
     </Routes>
