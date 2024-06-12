@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 import Nav from "./Nav";
+import Loading from "./Loading";
 const Games = ()=>{
-
+  const [isLoader, setLoader] =useState(true);
     const [data, setData] = useState([]);
     const getimage = async () => {
         try {
@@ -15,10 +16,10 @@ const Games = ()=>{
           });
           setData(res.data);
           console.log(data,"bsdka")
-          
+          setLoader(false);
         } catch (err) {
           console.log(err);
-         
+          setLoader(false);
         }
       };
     
@@ -26,7 +27,7 @@ const Games = ()=>{
         getimage();
       }, []);
 
-    return(
+    return isLoader ? (<Loading/>):(
 <div>
     <Nav/>
                

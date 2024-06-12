@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-
+import Loading from "./Loading";
 import Nav from "./Nav";
 const Dress = ()=>{
+  const [isLoader, setLoader] =useState(true);
 
     const [data, setData] = useState([]);
     const getimage = async () => {
@@ -14,11 +15,12 @@ const Dress = ()=>{
             },
           });
           setData(res.data);
+          setLoader(false);
           console.log(data,"bsdka")
           
         } catch (err) {
           console.log(err);
-         
+          setLoader(false);
         }
       };
     
@@ -26,7 +28,9 @@ const Dress = ()=>{
         getimage();
       }, []);
 
-    return(
+      return isLoader ? (
+        <Loading />
+      ) : (
         <div>
             <Nav/>
             <section>

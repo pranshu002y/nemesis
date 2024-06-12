@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 import Nav from "./Nav";
+import Loading from "./Loading";
 
 const Movies = ()=>{
     const [data, setData] = useState([]);
+
+    const [isLoader, setLoader] =useState(true);
+
     const getimage = async () => {
         try {
           const res = await axios.get('https://nemesis-backend.onrender.com/auth/movie/data', {
@@ -14,11 +18,12 @@ const Movies = ()=>{
             },
           });
           setData(res.data);
+          setLoader(false);
           console.log(data,"bsdka")
           
         } catch (err) {
           console.log(err);
-         
+          setLoader(false);
         }
       };
     
@@ -26,7 +31,7 @@ const Movies = ()=>{
         getimage();
       }, []);
 
-    return(
+      return isLoader ? (<Loading/>):(
         <div>
             <Nav/>
             

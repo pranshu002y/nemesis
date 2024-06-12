@@ -27,7 +27,6 @@ const Nav = ()=>{
         </div>
         <div id="nav-part2">
           <div id="links">
-        
             <a href="#" onClick={()=>navigate("/movies")}>Movies</a>
             <a href="#" onClick={()=>navigate("/dress")}>Dresses</a>
             <a href="#" onClick={()=>navigate("/games")}>Games</a>

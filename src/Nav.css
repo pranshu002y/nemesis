@@ -126,7 +126,7 @@ object-fit: contain;
 .add-links a{
   text-transform: uppercase;
   display: flex;
-  /* flex-direction: column; */
+ 
   align-items: center;
   justify-content: space-between;
 padding: 10px;
@@ -137,6 +137,9 @@ padding: 10px;
   width: 100%;
   padding: 0 1vw;
 left: 20px;
+display: flex;
+gap: 10px;
+
 }
 
 }
@@ -174,6 +177,9 @@ display: flex;
 gap: 10px;
 
   }
+
+
+  
   
 }
 
@@ -220,5 +226,8 @@ display: flex;
 gap: 10px;
 
   }
+
+
+
 }
 
