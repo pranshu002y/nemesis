@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-const Modaldress = ({ setShowModal }) => {
+const Modal = ({ setShowModal }) => {
   const [data, setData] = useState({
     Title: "",
     Link:"",
@@ -62,13 +62,12 @@ const Modaldress = ({ setShowModal }) => {
     try {
       const def = {
         Image: imageUrl[0],
-        company: data.company,
         Title: data.Title,
         Category: data.Category,
         Link: data.Link,
       };
 
-      const response = await axios.post("http://localhost:5200/auth/dress", def);
+      const response = await axios.post("https://nemesis-backend.onrender.com/auth/dress", def);
       console.log("Save operation complete", response.data);
       navigate("/dress"); 
     } catch (err) {
@@ -132,4 +131,4 @@ const Modaldress = ({ setShowModal }) => {
   );
 }
 
-export default Modaldress;
+export default Modal;

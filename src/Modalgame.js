@@ -68,7 +68,7 @@ const Modalgame = ({ setShowModal }) => {
         Link: data.Link,
       };
 
-      const response = await axios.post("http://localhost:5200/auth/games", def);
+      const response = await axios.post("https://nemesis-backend.onrender.com/auth/games", def);
       console.log("Save operation complete", response.data);
       navigate("/games"); 
     } catch (err) {

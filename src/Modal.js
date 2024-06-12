@@ -62,13 +62,13 @@ const Modal = ({ setShowModal }) => {
     try {
       const def = {
         Image: imageUrl[0],
-        company: data.company,
+       
         Title: data.Title,
         Category: data.Category,
         Link: data.Link,
       };
 
-      const response = await axios.post("http://localhost:5200/auth/movies", def);
+      const response = await axios.post("https://nemesis-backend.onrender.com/auth/movies", def);
       console.log("Save operation complete", response.data);
       navigate("/movies"); 
     } catch (err) {

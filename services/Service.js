@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseURL = `https://soalbackend.onrender.com`
+const baseURL = `https://nemesis-backend.onrender.com`
 
 export const axiosGet = async(url) =>{
     return await axios.get(`${baseURL}${url}`,{

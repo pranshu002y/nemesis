@@ -1,7 +1,6 @@
 import React from "react";
 import "./Nav.css"
 import { useState } from "react";
-import Modal from "./Modal";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Profile from "./Profile";
