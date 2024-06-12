@@ -11,7 +11,7 @@ const Carousel = ()=>{
         
 
         <div className="logo-icon" >
-            <img src = "https://cdn.icon-icons.com/icons2/1144/PNG/512/fourdots_80930.png" />
+            <img src = "https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-cog-wheel-icon-png-image_956693.jpg" />
           </div>
           <div className="add-links">
             <a href="#" onClick={()=>navigate("/movie/modal")} >Add Movie</a>
@@ -20,7 +20,7 @@ const Carousel = ()=>{
        
           </div>
           <div className="logo-icon" >
-            <img src = "https://cdn.icon-icons.com/icons2/1144/PNG/512/fourdots_80930.png"  />
+            <img src = "https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-cog-wheel-icon-png-image_956693.jpg"  />
           </div>
         </div>
       </div>
