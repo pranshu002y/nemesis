@@ -113,7 +113,7 @@ object-fit: contain;
   }
 
   #links {
-    display: none;
+    display: flex;
   }
 
 
@@ -131,6 +131,12 @@ object-fit: contain;
   justify-content: space-between;
 padding: 10px;
   z-index: 1000; 
+}
+#page1 {
+  position: relative;
+  width: 100%;
+  padding: 0 1vw;
+left: 20px;
 }
 
 }
@@ -158,6 +164,15 @@ padding: 10px;
     height: 40px;
     width: 100%;
     object-fit: contain;
+  }
+  #page1 {
+    position: relative;
+    width: 100%;
+    padding: 0 1vw;
+left: 20px;
+display: flex;
+gap: 10px;
+
   }
   
 }
@@ -195,6 +210,15 @@ padding: 10px;
     justify-content: space-between;
   padding: 10px;
     z-index: 1000; 
+  }
+  #page1 {
+    position: relative;
+    width: 100%;
+    padding: 0 1vw;
+left: 20px;
+display: flex;
+gap: 10px;
+
   }
 }
 

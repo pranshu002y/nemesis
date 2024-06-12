@@ -15,9 +15,7 @@ const Container = () =>{
             {reels && reels.map((e)=>{
             return(
         <div class="container">
-       
-
-            
+     
     <div class="card">
       <div class="card-inner" style={{"--clr":"#fff;"}}>
         <div class="box">
