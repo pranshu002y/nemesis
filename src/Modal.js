@@ -70,7 +70,7 @@ const Modal = ({ setShowModal }) => {
 
       const response = await axios.post("http://localhost:5200/auth/movies", def);
       console.log("Save operation complete", response.data);
-      navigate("/"); 
+      navigate("/movies"); 
     } catch (err) {
       console.error(err, "Save operation failed");
     }

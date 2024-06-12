@@ -21,7 +21,6 @@ const Nav = ()=>{
   };
     return(
 <div>
-{/* {showModal && <Modal setShowModal={setShowModal}/>} */}
 {showModal && <Profile setShowModal={setShowModal}/>}
       <div id="nav">
         <div id="nav-part1">
@@ -33,8 +32,6 @@ const Nav = ()=>{
             <a href="#" onClick={()=>navigate("/movies")}>Movies</a>
             <a href="#" onClick={()=>navigate("/dress")}>Dresses</a>
             <a href="#" onClick={()=>navigate("/games")}>Games</a>
-            {/* <a href="https://www.linkedin.com/in/pranshu002y/"  onClick={()=>navigate("/linkedin")}>Donate</a> */}
-       
        <a href="#" onClick={() => logout()}>LogOut</a>
           </div>
           <div className="logo-icon" >

@@ -7,6 +7,7 @@ import Movies from "./Movies";
 import Dress from "./Dress";
 import Games from "./Games";
 import Login from './Login';
+import Modal from './Modal';
 function App() {
   return (
     <Auth0Provider
@@ -21,6 +22,7 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/layout" element={<Layout/>} />
       <Route path="/movies" element={<Movies/>} />
+      <Route path="/movie/modal" element={<Modal/>} />
       <Route path="/dress" element={<Dress/>} />
       <Route path="/games" element={<Games />} />
     </Routes>
