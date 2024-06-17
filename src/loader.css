@@ -1,6 +1,6 @@
 .contain {
-    background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(2px);
+    /* background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px); */
   display: flex;
     display: flex;
     width: 100%;
@@ -23,6 +23,7 @@
      justify-content: center;
       border-radius: 6px;
       transition: 0.3s ease-in-out;
+      
   }
   
   .contain .left-side {
