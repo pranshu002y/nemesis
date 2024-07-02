@@ -30,7 +30,7 @@ const Modal = ({ setShowModal }) => {
 
       formData.append("upload_preset", "ml_default");
       const response = await fetch(
-        "https://api.cloudinary.com/v1_1/dzvxsgooe/image/upload",
+        "https://api.cloudinary.com/v1_1/doqgcssfm/image/upload",
         {
           method: "POST",
           body: formData,
