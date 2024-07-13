@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-const Modal = ({ setShowModal }) => {
+
+const Modal = () => {
   const [data, setData] = useState({
     Title: "",
-    Link:"",
+    Link: "",
     Category: "",
     Image: ""
   });
 
   const [imageUrl, setImageUrl] = useState([]);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
-  
   const handleImageupload = async (event) => {
     try {
       const files = event.target.files;
@@ -51,6 +51,7 @@ const Modal = ({ setShowModal }) => {
       setLoading(false);
     }
   };
+
   const handleSave = async (e) => {
     e.preventDefault();
 
@@ -60,22 +61,23 @@ const Modal = ({ setShowModal }) => {
     }
 
     try {
+      setLoading(true); // Set loading to true when save operation starts
       const def = {
         Image: imageUrl[0],
-       
         Title: data.Title,
         Category: data.Category,
         Link: data.Link,
       };
 
-      const response = await axios.post("https://nemesis-backend.onrender.com/auth/movies", def);
+      const response = await axios.post("https://nemesis-backend.onrender.com/auth/dress", def);
       console.log("Save operation complete", response.data);
-      navigate("/movies"); 
+      setLoading(false); // Set loading to false when save operation completes
+      navigate("/movies");
     } catch (err) {
       console.error(err, "Save operation failed");
+      setLoading(false); // Set loading to false if save operation fails
     }
   };
-
 
   return (
     <div className="si">
@@ -94,19 +96,19 @@ const Modal = ({ setShowModal }) => {
                   value={data.Title}
                   onChange={(e) => setData({ ...data, Title: e.target.value })}
                 />
-                 <input
+                <input
                   type="text"
                   placeholder="Enter the Category"
                   value={data.Category}
                   onChange={(e) => setData({ ...data, Category: e.target.value })}
                 />
-                 <input
+                <input
                   type="text"
                   placeholder="Enter the Link"
                   value={data.Link}
                   onChange={(e) => setData({ ...data, Link: e.target.value })}
                 />
-                  </span>
+              </span>
               <p>
                 <input
                   type="file"
@@ -120,16 +122,22 @@ const Modal = ({ setShowModal }) => {
           </div>
         </main>
         <div className="view-all">
-          <div className="submit-btn" onClick={handleSave}>
-            SUBMIT
-          </div>
-          <div className="close-btn" onClick={() => setShowModal(false)}>
-            CLOSE
-          </div>
+          {loading ? (
+            <div className="submit-btn">Loading...</div>
+          ) : (
+            <>
+              <div className="submit-btn" onClick={handleSave}>
+                SUBMIT
+              </div>
+              <div className="close-btn" onClick={() => navigate("/layout")}>
+                CLOSE
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Modal;

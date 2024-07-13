@@ -43,7 +43,7 @@ const Games = ()=>{
    <div class="icon">
      <a href={e.Link} class="iconBox"> 
      <span class="material-symbols-outlined">
-      Open It
+    Link
        </span></a>
    </div>
  </div>
