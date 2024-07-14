@@ -69,7 +69,7 @@ const Modal = () => {
         Link: data.Link,
       };
 
-      const response = await axios.post("https://nemesis-backend.onrender.com/auth/dress", def);
+      const response = await axios.post("https://nemesis-backend.onrender.com/auth/games", def);
       console.log("Save operation complete", response.data);
       setLoading(false); // Set loading to false when save operation completes
       navigate("/games");
