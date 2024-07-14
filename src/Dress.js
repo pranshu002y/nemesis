@@ -45,6 +45,10 @@ const Dress = () => {
   ) : (
     <div>
       <Nav onChange={Filter} />
+      <div class="search-box">
+        <input class="search-input" type="search" placeholder="Search..." onChange={Filter}/>
+    </div>
+            
       <section className="search">
       
       {/* <input type="text" id="search-bar" placeholder="What can I help you with today?" onChange={Filter}/> */}
