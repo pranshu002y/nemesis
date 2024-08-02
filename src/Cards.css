@@ -134,3 +134,62 @@
 	 font-size: 1.5rem;
 }
  
+
+
+.container-about {
+	position: relative;
+	text-align: left;
+	color: #fff;
+}
+.container-about img {
+	width: 100%;
+	/* height: 800px; */
+	object-fit: contain;
+}
+.top-left {
+	position: absolute;
+	top: 0;
+	left: 20px;
+}
+.top-right {
+	position: absolute;
+	top: 0;
+	right: 20px;
+}
+.centered {
+	position: absolute;
+	top: 40%;
+	left: 20px;
+	
+	
+}
+.centered h1 {
+	font-size: 3em;
+	margin: 0;
+	
+}
+.centered h1 span {
+	font-weight: normal;
+}
+.centered p {
+	font-size: 1.2em;
+	margin: 10px 0 0;
+}
+.bottom-section {
+	background-color: #ff3d00;
+	text-align: center;
+	padding: 40px 20px;
+	position: relative;
+	text-decoration: none;
+}
+.bottom-section h2 {
+	font-size: 2.5em;
+	margin: 0;
+}
+.bottom-section p {
+	margin: 20px auto;
+	max-width: 800px;
+	font-size: 1.1em;
+}
+
+
