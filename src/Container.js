@@ -31,11 +31,11 @@ const Container = () =>{
         </div>
       </div>
       <div class="content">
-        <h3>netflix</h3>
-        <p>Fill out the form and the algorithm will offer the right team of experts</p>
+        <h3>Wallpapers</h3>
+        <p></p>
         <ul>
-          <li style={{"--clr-tag":"#d3b19a;"}} class="branding">branding</li>
-          <li style={{"--clr-tag":"#70b3b1;"}} class="packaging">packaging</li>
+        <li style={{"--clr-tag":"#d3b19a;"}} className="branding">{e.id}</li>
+   <li style={{"--clr-tag":"#70b3b1;"}} className="packaging">{e.color}</li>
         </ul>
       </div>
       

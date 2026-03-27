@@ -71,8 +71,8 @@ const Movies = ()=>{
  <h3>{e.Title}</h3>
  <p>{e.Category}</p>
  <ul>
-   <li style={{"--clr-tag":"#d3b19a;"}} className="branding">branding</li>
-   <li style={{"--clr-tag":"#70b3b1;"}} className="packaging">packaging</li>
+   <li style={{"--clr-tag":"#d3b19a;"}} className="branding">Update</li>
+   <li style={{"--clr-tag":"#70b3b1;"}} className="packaging">Delete</li>
  </ul>
 </div>
 

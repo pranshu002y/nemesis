@@ -71,8 +71,8 @@ const Games = ()=>{
  <h3>{e.Title}</h3>
  <p>{e.Image}</p>
  <ul>
-   <li style={{"--clr-tag":"#d3b19a;"}} class="branding">branding</li>
-   <li style={{"--clr-tag":"#70b3b1;"}} class="packaging">packaging</li>
+ <li style={{"--clr-tag":"#d3b19a;"}} className="branding">Update</li>
+   <li style={{"--clr-tag":"#70b3b1;"}} className="packaging">Delete</li>
  </ul>
 </div>
 

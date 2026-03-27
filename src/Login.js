@@ -27,18 +27,20 @@ const Login = () => {
             </h2>
           </div>
 
-          <form className="login-form">
+          <div className="login-form">
 
             <div className="login-btn">
               {isAuthenticated ? (
                 <button
+                  type="button"
                   className="Btn Btn--primary Btn--large"
-                  onClick={() => logout({ returnTo: window.location.origin })}
+                  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
                 >
                   LogOut
                 </button>
               ) : (
                 <button
+                  type="button"
                   className="Btn Btn--primary Btn--large"
                   onClick={() => loginWithRedirect()}
                 >
@@ -46,7 +48,7 @@ const Login = () => {
                 </button>
               )}
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
