@@ -25,13 +25,13 @@ const Nav = () => {
         </div>
         <div id="nav-part2">
           <div id="links">
-            <a href="#" onClick={() => navigate("/movies")}>Movies</a>
-            <a href="#" onClick={() => navigate("/dress")}>Dresses</a>
-            <a href="#" onClick={() => navigate("/games")}>Games</a>
+            <a href="/movies" onClick={(e) => { e.preventDefault(); navigate("/movies"); }}>Movies</a>
+            <a href="/dress" onClick={(e) => { e.preventDefault(); navigate("/dress"); }}>Dresses</a>
+            <a href="/games" onClick={(e) => { e.preventDefault(); navigate("/games"); }}>Games</a>
             <a href="/" onClick={(e) => { e.preventDefault(); logout({ logoutParams: { returnTo: window.location.origin } }); }}>LogOut</a>
           </div>
           <div className="logo-icon" >
-            <img src="https://cdn.icon-icons.com/icons2/1144/PNG/512/fourdots_80930.png" onClick={() => {
+            <img src="https://cdn.icon-icons.com/icons2/1144/PNG/512/fourdots_80930.png" alt="menu" onClick={() => {
               if (showModal) {
                 closeModal();
               } else {
